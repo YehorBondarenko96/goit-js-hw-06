@@ -9,27 +9,31 @@ const boxes = document.querySelector('#boxes');
 const create = document.querySelector('[data-create]');
 const destroy = document.querySelector('[data-destroy]');
 const dataInput = controls.querySelector('input');
-
+let size = 0; 
 
 function createBoxers() {
   const amount = parseInt(dataInput.value);
+  let box = boxes.querySelector('div');
+
     for (let i = 1; i <= amount; i++) {
-      const box = document.createElement('div');
-      if (i === 1) {
-        box.style.width = '30px';
-        } else{
-        box.style.width = () => {
-          box.style.width += '10px';
-        }
+      
+      if (!box) {
+        size = 30;
+      } else {
+        size += 10;
       };
-      box.style.height = "30px";
+      box = document.createElement('div');
+      box.style.width = size + 'px';
+      box.style.height = size + 'px';
       box.style.backgroundColor = getRandomHexColor();
       boxes.append(box);
-  }
+    }
+  
 }
 
 const destroyBoxers = () => {
   boxes.innerHTML = '';
+  size = 0;
 }
 
 create.addEventListener('click', createBoxers);
