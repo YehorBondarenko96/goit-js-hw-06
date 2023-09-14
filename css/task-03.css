@@ -1,16 +1,17 @@
 .gallery{
     display: flex;
     justify-content: space-evenly;
+    gap: 10px;
 }
 
 .gallery>li{
     display: flex;
     flex-direction: column;
-    gap:15px;
-    height: 290px;
     overflow: hidden;
 }
 
 .img{
     width: 450px;
+    margin-top: auto;
+    height: 290px;
 }
