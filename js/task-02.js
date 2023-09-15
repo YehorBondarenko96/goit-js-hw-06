@@ -24,8 +24,5 @@ console.log(listIngredients);
 
 
 
-/*const item = `<li class = "item">${ingredient}</li>`;
-  items.push(item);
 
-listIngredients.insertAdjacentHTML("afterbegin", items.join(''));*/
 
