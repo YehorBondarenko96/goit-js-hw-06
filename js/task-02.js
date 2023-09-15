@@ -10,8 +10,22 @@ const ingredients = [
 const listIngredients = document.querySelector('#ingredients');
 const items = [];
 ingredients.forEach((ingredient) => {
-  const item = `<li class = "item">${ingredient}</li>`;
-  items.push(item);
+  const liIngredients = document.createElement("li");
+  liIngredients.classList.add('item');
+  liIngredients.textContent = ingredient;
+  items.push(liIngredients);
 });
-listIngredients.insertAdjacentHTML("afterbegin", items.join(''));
+
+listIngredients.append(...items);
 console.log(listIngredients);
+  
+
+
+
+
+
+/*const item = `<li class = "item">${ingredient}</li>`;
+  items.push(item);
+
+listIngredients.insertAdjacentHTML("afterbegin", items.join(''));*/
+
